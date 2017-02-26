@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <CheckBox
+        android:text="@string/art"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkArt"
+        android:layout_below="@+id/deskValue"
+        android:layout_alignLeft="@+id/deskValue"
+        android:layout_alignStart="@+id/deskValue" />
+
+    <CheckBox
+        android:text="@string/Fashoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkFashion"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/checkSport"
+        android:layout_alignLeft="@+id/checkSport"
+        android:layout_alignStart="@+id/checkSport" />
+
+    <CheckBox
+        android:text="@string/sport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkSport"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/checkArt"
+        android:layout_alignLeft="@+id/checkArt"
+        android:layout_alignStart="@+id/checkArt" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:entries="@array/sort_value"
+        android:layout_marginTop="50dp"
+        android:layout_alignTop="@+id/orderSort"
+        android:layout_alignLeft="@+id/orderSort"
+        android:layout_alignStart="@+id/orderSort" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="@string/desk"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:id="@+id/deskValue"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/spinner"
+        android:layout_alignRight="@+id/spinner"
+        android:layout_alignEnd="@+id/spinner" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="@string/sort"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:id="@+id/orderSort"
+        android:layout_marginTop="100dp"
+        android:layout_below="@+id/fraDate"
+        android:layout_alignLeft="@+id/fraDate"
+        android:layout_alignStart="@+id/fraDate" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="@string/Date"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:id="@+id/fraDate"
+        android:layout_above="@+id/datePicker"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp" />
+
+
+</RelativeLayout>
