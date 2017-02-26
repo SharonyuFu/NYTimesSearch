@@ -10,11 +10,11 @@ The following **required** functionality is completed:
 
 * [V] User can **search for news article** by specifying a query and launching a search. Search displays a grid of image results from the New York Times Search API.
 * [V] User can click on "settings" which allows selection of **advanced search options** to filter results
-* [ ] User can configure advanced search filters such as:
-  * [ ] Begin Date (using a date picker)
+* [partly ] User can configure advanced search filters such as:
+  * [partly] Begin Date (using a date picker)
   * [V] News desk values (Arts, Fashion & Style, Sports)
   * [V] Sort order (oldest or newest)
-* [ ] Subsequent searches have any filters applied to the search results
+* [partly] Subsequent searches have any filters applied to the search results
 * [V] User can tap on any article in results to view the contents in an embedded browser.
 * [V] User can **scroll down to see more articles**. The maximum number of articles is limited by the API search.
 
@@ -33,7 +33,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://imgur.com/a/q9YrB.gif' title='Video Walkthrough' width='300' alt='Video Walkthrough' />
+<img src='http://imgur.com/a/q9YrB.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
