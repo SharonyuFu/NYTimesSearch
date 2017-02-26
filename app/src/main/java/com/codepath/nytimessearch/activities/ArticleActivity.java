@@ -47,11 +47,11 @@ public class ArticleActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_search, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_search, menu);
+//        return true;
+//    }
 
     private Boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager

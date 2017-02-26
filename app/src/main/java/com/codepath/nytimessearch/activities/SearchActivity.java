@@ -51,7 +51,8 @@ public class SearchActivity extends AppCompatActivity implements Serializable {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setupViews();
-        showFilterDialog();
+
+
 
         gvResults.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -65,60 +66,26 @@ public class SearchActivity extends AppCompatActivity implements Serializable {
             }
         });
 
-        gvResults.setOnScrollListener(new EndlessScrollListener() {
-            @Override
-            public boolean onLoadMore(int page, int totalItemsCount) {
-                // Triggered only when new data needs to be appended to the list
-                // Add whatever code is needed to append new items to your AdapterView
-                for(int i=0;i<100;i++) {
-                    loadNextDataFromApi(i);
-                }
-                // or loadNextDataFromApi(totalItemsCount); 
-                return true; // ONLY if more data is actually being loaded; false otherwise.
-            }
-        });
+//        gvResults.setOnScrollListener(new EndlessScrollListener() {
+//            @Override
+//            public boolean onLoadMore(int page, int totalItemsCount) {
+//                // Triggered only when new data needs to be appended to the list
+//                // Add whatever code is needed to append new items to your AdapterView
+//
+//                loadNextDataFromApi(page);
+//
+//                // or loadNextDataFromApi(totalItemsCount);
+//                return true; // ONLY if more data is actually being loaded; false otherwise.
+//            }
+//        });
     
 
     }
-
-    public void loadNextDataFromApi(int offset) {
-        
-        String query = etQuery.getText().toString();
-//        Toast.makeText(this,"Search For " + query,Toast.LENGTH_LONG).show();
-        AsyncHttpClient client = new AsyncHttpClient();
-        RequestParams params = new RequestParams();
-        params.put("api-key", "1244891bfb134e8bb3f4f0c7a9fd3271");
-        params.put("page", offset);
-        params.put("q",query);
-        String url = "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
-        client.get(url,params, new JsonHttpResponseHandler(){
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                super.onSuccess(statusCode, headers, response);
-
-                JSONArray articleJsonResults = null;
-
-                try{
-                    articleJsonResults = response.getJSONObject("response").getJSONArray("docs");
-                    adapter.addAll(Article.fromJSONArray(articleJsonResults));
-                    log.d("sceesss",adapter.toString());
-
-
-
-                }catch(JSONException e){
-                    e.printStackTrace();
-                }
-
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                super.onFailure(statusCode, headers, throwable, errorResponse);
-            }
-        });
-
-
-    }
+//
+//    public void loadNextDataFromApi(int offset) {
+//
+//
+//    }
 
     private void showFilterDialog() {
         FragmentManager fm = getSupportFragmentManager();
@@ -194,5 +161,9 @@ public class SearchActivity extends AppCompatActivity implements Serializable {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
+    }
+
+    public void onComposeAction(MenuItem item) {
+        showFilterDialog();
     }
 }
